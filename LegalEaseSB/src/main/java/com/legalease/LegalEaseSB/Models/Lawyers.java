@@ -20,4 +20,27 @@ public class Lawyers
     private String phone;
     private String password;
     private String requests;
+    private int age;
+
+    private String interestedDomains;
+    private String expertise;
+    private String description;
+
+    private String userType;
+
+    private String authType;
+
+    public Lawyers(String email, String name, String phone, String password, String requests, int age, String interestedDomains, String expertise, String description, String userType, String authType) {
+        this.email = email;
+        this.name = name;
+        this.phone = phone;
+        this.password = password;
+        this.requests = requests;
+        this.age = age;
+        this.interestedDomains = interestedDomains;
+        this.expertise = expertise;
+        this.description = description;
+        this.userType = userType;
+        this.authType = authType;
+    }
 }
