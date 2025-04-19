@@ -17,7 +17,7 @@ public class Consumers
     @Id
     private String id;
 
-    private String name;
+    private String username;
     private String email;
     private String password;
     private String userType; // "Consumer" or "Lawyer"
@@ -25,7 +25,7 @@ public class Consumers
     private String authType; // "password" or "google" for handling OAuth
 
     public Consumers(String name, String email, String password, String userType, String authType) {
-        this.name = name;
+        this.username = name;
         this.email = email;
         this.password = password;
         this.userType = userType;

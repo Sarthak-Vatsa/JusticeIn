@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -39,7 +40,15 @@ public class LawyerService
         //lid can be extracted from the jwt as well
         String lid = lawyer.getId();
         List<Requests> requests = rrepo.findAllById(Collections.singleton(lid));
-        return requests;
+        List<Requests> requiredRequests = new ArrayList<>();
+        for(Requests req: requests)
+        {
+            if(req.getStatus().equalsIgnoreCase("Pending")){
+                requiredRequests.add(req);
+            }
+        }
+
+        return requiredRequests;
     }
 
     public ResponseEntity<String> acceptRequest(@RequestBody Requests request)

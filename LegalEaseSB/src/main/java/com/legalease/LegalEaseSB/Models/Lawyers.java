@@ -16,7 +16,7 @@ public class Lawyers
     private String id;
 
     private String email;
-    private String name;
+    private String username;
     private String phone;
     private String password;
     private String requests;
@@ -32,7 +32,7 @@ public class Lawyers
 
     public Lawyers(String email, String name, String phone, String password, String requests, int age, String interestedDomains, String expertise, String description, String userType, String authType) {
         this.email = email;
-        this.name = name;
+        this.username = name;
         this.phone = phone;
         this.password = password;
         this.requests = requests;
