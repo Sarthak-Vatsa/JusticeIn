@@ -56,7 +56,7 @@ public class SecurityConfig {
 
         http.csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/consumer/register", "/consumer/login", "/lawyer/login", "/lawyer/login")
+                        .requestMatchers("/consumer/register", "/consumer/login", "/lawyer/login", "/lawyer/register")
                         .permitAll()
                         //.requestMatchers("/consumer/**").hasAuthority("ROLE_CONSUMER")
                         //.requestMatchers("/lawyer/**").hasAuthority("ROLE_LAWYER")

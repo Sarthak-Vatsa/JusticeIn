@@ -74,7 +74,7 @@ public class ConsumerService
         String username = auth.getName(); // JWT subject = username
 
         Consumers consumer = crepo.findByUsername(username);
-        request.setC_id(consumer.getId());
+        request.setCid(consumer.getId());
 
         //l_id will be sent from the frontend itself (the lawyer which the consumer will select)
 
@@ -82,5 +82,10 @@ public class ConsumerService
         request.setStatus("Pending");
         rrepo.save(request);
         return "Successful";
+    }
+
+    public ResponseEntity<String> logout()
+    {
+        return ResponseEntity.ok("Delete the token on the client side");
     }
 }

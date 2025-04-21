@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/lawyer")
@@ -34,17 +35,17 @@ public class LawyerController
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody Lawyers lawyer)
+    public ResponseEntity<Map<String, String>> login(@RequestBody Lawyers lawyer)
     {
-        String status = lservice.login(lawyer);
-        return ResponseEntity.ok("Login Successfull");
+        String jwt = lservice.login(lawyer);
+        return ResponseEntity.ok(Map.of("token", jwt));
     }
 
 
     @GetMapping("/getRequests")
-    public List<Requests> findRequestsWithId(@RequestBody Lawyers lawyer)
+    public List<Requests> findRequestsWithId()
     {
-        List<Requests> requests = lservice.findRequestsWithId(lawyer);
+        List<Requests> requests = lservice.findRequestsWithId();
         return requests;
     }
 
@@ -69,5 +70,11 @@ public class LawyerController
     {
         List<Lawyers> lawyers = lservice.findLawyers(search);
         return lawyers;
+    }
+
+    @GetMapping("/logout")
+    public ResponseEntity<String> logout()
+    {
+        return lservice.logout();
     }
 }
