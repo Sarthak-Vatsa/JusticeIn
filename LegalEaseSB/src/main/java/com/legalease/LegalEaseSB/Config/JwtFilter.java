@@ -1,4 +1,4 @@
-package com.legalease.LegalEaseSB.config;
+package com.legalease.LegalEaseSB.Config;
 
 import com.legalease.LegalEaseSB.Services.JwtService;
 import jakarta.servlet.FilterChain;

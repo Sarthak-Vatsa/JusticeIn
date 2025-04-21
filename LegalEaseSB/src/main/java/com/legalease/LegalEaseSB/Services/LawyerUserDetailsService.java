@@ -2,7 +2,7 @@ package com.legalease.LegalEaseSB.Services;
 
 import com.legalease.LegalEaseSB.Models.Lawyers;
 import com.legalease.LegalEaseSB.Repos.LawyerRepo;
-import com.legalease.LegalEaseSB.config.LawyerPrincipal;
+import com.legalease.LegalEaseSB.Config.LawyerPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

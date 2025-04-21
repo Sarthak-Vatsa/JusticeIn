@@ -1,4 +1,4 @@
-package com.legalease.LegalEaseSB.config;
+package com.legalease.LegalEaseSB.Config;
 
 import com.legalease.LegalEaseSB.Models.Lawyers;
 import org.springframework.security.core.GrantedAuthority;
