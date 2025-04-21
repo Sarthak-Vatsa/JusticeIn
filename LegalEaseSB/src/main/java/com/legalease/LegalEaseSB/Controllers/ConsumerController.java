@@ -46,4 +46,10 @@ public class ConsumerController
     {
         return cservice.logout();
     }
+
+    @PostMapping("/oauth-register")
+    public ResponseEntity<String> registerOauthConsumer(@RequestBody Consumers consumer) {
+        String token = cservice.registerOAuthConsumer(consumer);
+        return ResponseEntity.ok(token);
+    }
 }

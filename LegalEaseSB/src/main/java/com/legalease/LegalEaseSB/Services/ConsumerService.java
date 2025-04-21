@@ -88,4 +88,15 @@ public class ConsumerService
     {
         return ResponseEntity.ok("Delete the token on the client side");
     }
+
+    public String registerOAuthConsumer(Consumers consumer)
+    {
+        if (crepo.findByUsername(consumer.getEmail()) != null) {
+            return "Consumer already exists.";
+        }
+        crepo.save(consumer);
+        String token = jwtService.generateToken(consumer.getEmail(), "Consumer");
+
+        return token;
+    }
 }

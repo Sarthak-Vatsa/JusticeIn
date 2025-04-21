@@ -10,5 +10,6 @@ import java.util.List;
 public interface LawyerRepo extends MongoRepository<Lawyers, String>
 {
     Lawyers findByUsername(String username);
+    Lawyers findByEmail(String email);
     List<Lawyers> findByDescriptionRegexIgnoreCase(String regex);
 }

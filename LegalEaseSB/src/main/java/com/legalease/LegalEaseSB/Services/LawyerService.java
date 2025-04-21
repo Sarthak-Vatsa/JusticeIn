@@ -117,4 +117,16 @@ public class LawyerService
     {
         return ResponseEntity.ok("Delete the JWT on the client side");
     }
+
+    public String registerOAuthLawyer(Lawyers lawyer)
+    {
+        //both username and email will be same ( = email)
+        if (lrepo.findByUsername(lawyer.getEmail()) != null) {
+            return "Lawyer already exists.";
+        }
+        lrepo.save(lawyer);
+        String token = jwtService.generateToken(lawyer.getEmail(), "Lawyer");
+
+        return token;
+    }
 }

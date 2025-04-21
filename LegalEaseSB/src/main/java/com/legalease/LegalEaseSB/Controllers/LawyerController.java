@@ -77,4 +77,10 @@ public class LawyerController
     {
         return lservice.logout();
     }
+
+    @PostMapping("/oauth-register")
+    public ResponseEntity<String> registerOauthLawyer(@RequestBody Lawyers lawyer) {
+        String token = lservice.registerOAuthLawyer(lawyer);
+        return ResponseEntity.ok(token);
+    }
 }
